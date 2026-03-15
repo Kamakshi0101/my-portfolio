@@ -1,0 +1,83 @@
+{
+  "leetcode": {
+    "solved": 150,
+    "easy": 60,
+    "medium": 70,
+    "hard": 20,
+    "contestRating": 1450,
+    "globalRank": 324702,
+    "acceptanceRate": 64,
+    "submissions": 389,
+    "currentStreak": 1,
+    "longestStreak": 90,
+    "activeDays": 189,
+    "username": "kamakshiagg",
+    "profileUrl": "https://leetcode.com/u/kamakshiagg/"
+  },
+  "github": {
+    "repos": 15,
+    "publicRepos": 15,
+    "contributions": 300,
+    "stars": 10,
+    "commits": 294,
+    "pullRequests": 31,
+    "issues": 12,
+    "followers": 20,
+    "following": 10,
+    "username": "kamakshi0101",
+    "topLanguage": "JavaScript",
+    "languages": ["TypeScript", "JavaScript", "Python", "C++", "CSS", "HTML"],
+    "profileUrl": "https://github.com/kamakshi0101"
+  },
+  "hackerrank": {
+    "badges": 5,
+    "stars": 4,
+    "certifications": 2,
+    "algorithmsScore": 78,
+    "dataStructuresScore": 72,
+    "problemSolvingScore": 80,
+    "username": "kamakshiagg2005",
+    "profileUrl": "https://www.hackerrank.com/profile/kamakshiagg2005"
+  },
+  "gfg": {
+    "solved": 80,
+    "score": 650,
+    "scorePerProblem": 8,
+    "monthlyRanking": "Top 10%",
+    "articlesRead": 120,
+    "practiceStreak": 14,
+    "username": "kamakshiilt4",
+    "profileUrl": "https://www.geeksforgeeks.org/profile/kamakshiilt4"
+  },
+  "personalDevelopment": {
+    "yearsExperience": 2.6,
+    "totalProjects": 5,
+    "completedProjects": 4,
+    "inProgressProjects": 1,
+    "totalCertifications": 10,
+    "totalSkills": 21,
+    "avgSkillsPerProject": 6.6,
+    "mostUsedTech": "Next.js"
+  },
+  "skillUsage": {
+    "Frontend": [
+      { "name": "Next.js", "count": 3 },
+      { "name": "React", "count": 3 },
+      { "name": "TailwindCSS", "count": 3 },
+      { "name": "TypeScript", "count": 3 }
+    ],
+    "Backend": [
+      { "name": "Node.js", "count": 3 },
+      { "name": "Express", "count": 3 }
+    ],
+    "Database": [
+      { "name": "MongoDB", "count": 2 },
+      { "name": "PostgreSQL", "count": 1 }
+    ],
+    "Other": [
+      { "name": "WebSockets", "count": 1 },
+      { "name": "JWT", "count": 1 },
+      { "name": "Docker", "count": 1 }
+    ]
+  }
+}

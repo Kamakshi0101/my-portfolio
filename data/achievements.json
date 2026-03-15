@@ -1,0 +1,44 @@
+{
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Process Wars - IIT Ropar",
+      "description": "Achieved Consolation Prize at Process Wars conducted by the Indian Institute of Technology Ropar for demonstrating strong problem-solving and presentation skills in a competitive technical environment.",
+      "image": "/images/achievements/process-wars-iit-ropar.jpeg",
+      "icon": "trophy",
+      "date": "Feb 2026",
+      "color": "#8B5CF6",
+      "category": "Competition"
+    },
+    {
+      "id": 2,
+      "title": "Academic Excellence Award",
+      "description": "Awarded for outstanding academic performance and NPTEL course excellence, ranking among the top 25 students.",
+      "image": "/images/achievements/academic-excellence.jpeg",
+      "icon": "academic",
+      "date": "Dec 2025",
+      "color": "#F59E0B",
+      "category": "Academic"
+    },
+    {
+      "id": 3,
+      "title": "300+ Coding Problems Solved",
+      "description": "Solved over 300 coding problems across major competitive programming platforms including LeetCode, GeeksforGeeks, and HackerRank.",
+      "image": "/images/achievements/coding-problems.png",
+      "icon": "code",
+      "date": "Dec 2025",
+      "color": "#10B981",
+      "category": "DSA"
+    },
+    {
+      "id": 4,
+      "title": "NPTEL Silver Medal",
+      "description": "Received a Silver Medal in the NPTEL certification course \"Privacy and Security in Online Social Media\".",
+      "image": "/images/achievements/nptel-silver-medal.png",
+      "icon": "medal",
+      "date": "Apr 2025",
+      "color": "#C0C0C0",
+      "category": "Certification"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "SADHN – Skill And Development Hub Network",
+      "description": "Architected and deployed a microservices-based skill India initiative for skill enhancement and recruiting application with role-based access, JWT authentication and real-time WebSocket notifications. Implemented an algorithmic job matching and recommendation engine, automated cleanup schedulers, filtering with pagination, debouncing, lazy loading, and query optimization using database aggregation pipelines.",
+      "shortDescription": "Microservices-based skill development and recruiting platform with JWT auth and real-time WebSocket notifications.",
+      "tech": ["React.js", "Node.js", "Express.js", "MongoDB", "Docker", "Nginx"],
+      "type": "fullstack",
+      "device": "server",
+      "github": "https://github.com/igmansvi/sadhn",
+      "demo": "https://sadhn-in.vercel.app/",
+      "image": "/projects/sadhn.png",
+      "featured": true,
+      "period": "Oct 2025 – Dec 2025"
+    },
+    {
+      "id": 2,
+      "title": "Interview Prep AI Platform",
+      "description": "Designed a platform to provide personalized, role-specific interview preparation using AI-generated questions tailored to experience level and chosen focus areas. Built the entire review workflow including pinning, personal notes, difficulty tagging, expandable answers, and AI-driven concept explanations to create a structured, user-friendly practice flow.",
+      "shortDescription": "AI-driven personalized interview preparation platform with dynamic question generation using Grok AI API.",
+      "tech": ["HTML", "Tailwind CSS", "ReactJS", "NodeJS", "MongoDB", "Express", "Grok AI API"],
+      "type": "ai",
+      "device": "laptop",
+      "github": "https://github.com/Kamakshi0101/ai-interview-prep",
+      "demo": "https://ai-interview-prep-two-kappa.vercel.app/",
+      "image": "/projects/interview-prep.png",
+      "featured": true,
+      "period": "Oct 2025 – Nov 2025"
+    },
+    {
+      "id": 3,
+      "title": "Calendar Conflict Resolver",
+      "description": "A smart scheduling system that applies real-world DSA concepts to manage events efficiently, detect conflicts instantly, and recommend the next best available time slot. The calendar uses an adaptive storage strategy that switches between arrays and interval trees based on event volume, ensuring smooth performance. Features include real-time conflict alerts, intelligent suggestions, event analytics, and a clean, interactive timeline interface.",
+      "shortDescription": "A smart scheduling system that applies real-world DSA concepts to manage events efficiently, detect conflicts instantly, and recommend the next best available time slot.",
+      "tech": ["DSA","HTML5","CSS","JavaScript"],
+      "type": "web",
+      "device": "laptop",
+      "github": "https://github.com/Kamakshi0101/conflict-calendar",
+      "demo": "conflict-calendar.vercel.app",
+      "image": "/projects/calender.png",
+      "featured": false,
+      "period": "Mar 2026"
+    }
+  ]
+}

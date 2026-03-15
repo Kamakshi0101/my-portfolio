@@ -32,6 +32,33 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# explicit local env overrides
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# local caches and temp files
+.cache/
+.eslintcache
+.turbo/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# logs
+logs/
+*.log
+
+# editor / IDE
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini
 
 # vercel
 .vercel

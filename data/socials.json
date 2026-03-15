@@ -1,0 +1,35 @@
+{
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/kamakshi0101",
+      "icon": "SiGithub",
+      "color": "#FFFFFF",
+      "username": "KamakshiAggarwal"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/kamakshi-aggarwal/",
+      "icon": "SiLinkedin",
+      "color": "#0A66C2",
+      "username": "KamakshiAggarwal"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:kamakshiagg2005@gmail.com",
+      "icon": "SiGmail",
+      "color": "#EA4335",
+      "username": "kamakshiagg2005@gmail.com"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/u/kamakshiagg/",
+      "icon": "SiLeetcode",
+      "color": "#FFA116",
+      "username": "KamakshiAggarwal"
+    }
+  ],
+  "email": "kamakshiagg2005@gmail.com",
+  "phone": "+91-8447748510",
+  "resumeUrl": "/resume.pdf"
+}

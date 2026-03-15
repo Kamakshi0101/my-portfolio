@@ -1,0 +1,75 @@
+{
+  "certificates": [
+    {
+      "id": 1,
+      "title": "Privacy and Security in Online Social Media",
+      "organization": "NPTEL",
+      "date": "Apr 2025",
+      "image": "/certificates/nptel-social-media.png.png",
+      "link": "https://drive.google.com/file/d/1mefkGOLRjleK7rGUQOjLwGfSvywNXSd3/view?usp=drive_link",
+      "badge": "Silver Medal",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": 2,
+      "title": "Introduction to Programming in C",
+      "organization": "NPTEL",
+      "date": "Mar 2024",
+      "image": "/certificates/nptel-c-programming.png",
+      "link": "https://drive.google.com/file/d/1-Vddg-OuuISulTNecwC4d5gJcG_iHwtJ/view?usp=drive_link",
+      "badge": "Certificate",
+      "color": "#6366F1"
+    },
+    {
+      "id": 3,
+      "title": "DSA with C",
+      "organization": "CSEPathshala",
+      "date": "Mar 2024",
+      "image": "/certificates/csepathshala-dsa.png",
+      "link": "https://drive.google.com/file/d/17DoLynZkJ_BpDOvNX5GoxDc8Si1_Bs_C/view?usp=drive_link",
+      "badge": "Certificate",
+      "color": "#10B981"
+    },
+    {
+      "id": 4,
+      "title": "Unrevealing basic python towards ML/AI",
+      "organization": "CSEPathshala",
+      "date": "Jan 2024",
+      "image": "/certificates/csepathshala-python.png",
+      "link": "https://drive.google.com/file/d/1ikXiJhGNIcYzPp-X0QoUrl2iFf69iuz0/view?usp=drive_link",
+      "badge": "Certificate",
+      "color": "#10B981"
+    },
+    
+    {
+      "id": 5,
+      "title": "DSA Module – ByteXL Summer Training",
+      "organization": "ByteXL & LPU",
+      "date": "Jul 2025",
+      "image": "/certificates/bytexl-dsa.png",
+      "link": "https://drive.google.com/file/d/10vDhlMvbbSW_HLIvkeCZmWxLQ6Wn8_Wo/view?usp=drive_link",
+      "badge": "A+ Grade",
+      "color": "#F59E0B"
+    },
+    {
+      "id": 6,
+      "title": "Python Skill Certification",
+      "organization": "HackerRank",
+      "date": "Jan 2024",
+      "image": "/certificates/hackerrank-python.png",
+      "link": "https://www.hackerrank.com/certificates/c0c7aaafc13d",
+      "badge": "Certificate",
+      "color": "#F59E0B"
+    },
+    {
+      "id": 7,
+      "title": "CSS Skill Certification",
+      "organization": "HackerRank",
+      "date": "Jan 2024",
+      "image": "/certificates/hackerrank-css.png",
+      "link": "https://www.hackerrank.com/certificates/44831490698e",
+      "badge": "Certificate",
+      "color": "#F59E0B"
+    }
+  ]
+}

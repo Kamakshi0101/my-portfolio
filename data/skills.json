@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "icon": "code",
+      "skills": [
+        { "name": "C++", "icon": "SiCplusplus", "color": "#00599C" },
+        { "name": "JavaScript", "icon": "SiJavascript", "color": "#F7DF1E" },
+        { "name": "TypeScript", "icon": "SiTypescript", "color": "#3178C6" },
+        { "name": "Python", "icon": "SiPython", "color": "#3776AB" },
+        { "name": "PHP", "icon": "SiPhp", "color": "#777BB4" },
+        { "name": "Java", "icon": "SiOpenjdk", "color": "#ED8B00" }
+      ]
+    },
+    {
+      "name": "Frameworks",
+      "icon": "layers",
+      "skills": [
+        { "name": "React.js", "icon": "SiReact", "color": "#61DAFB" },
+        { "name": "Next.js", "icon": "SiNextdotjs", "color": "#FFFFFF" },
+        { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
+        { "name": "Express.js", "icon": "SiExpress", "color": "#FFFFFF" },
+        { "name": "Tailwind CSS", "icon": "SiTailwindcss", "color": "#06B6D4" }
+      ]
+    },
+    {
+      "name": "Databases",
+      "icon": "database",
+      "skills": [
+        { "name": "MongoDB", "icon": "SiMongodb", "color": "#47A248" },
+        { "name": "PostgreSQL", "icon": "SiPostgresql", "color": "#4169E1" },
+        { "name": "MySQL", "icon": "SiMysql", "color": "#4479A1" }
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "icon": "tool",
+      "skills": [
+        { "name": "Docker", "icon": "SiDocker", "color": "#2496ED" },
+        { "name": "AWS", "icon": "SiAmazonaws", "color": "#FF9900" },
+        { "name": "Git", "icon": "SiGit", "color": "#F05032" },
+        { "name": "GitHub", "icon": "SiGithub", "color": "#FFFFFF" },
+        { "name": "Vercel", "icon": "SiVercel", "color": "#FFFFFF" },
+        { "name": "Nginx", "icon": "SiNginx", "color": "#009639" },
+        { "name": "Linux", "icon": "SiLinux", "color": "#FCC624" }
+      ]
+    },
+    {
+      "name": "Core CS",
+      "icon": "cpu",
+      "skills": [
+        { "name": "Data Structures", "icon": "SiLeetcode", "color": "#FFA116" },
+        { "name": "Algorithms", "icon": "SiCodeforces", "color": "#1F8ACB" },
+        { "name": "OS", "icon": "SiLinux", "color": "#FCC624" },
+        { "name": "Networking", "icon": "SiCisco", "color": "#1BA0D7" },
+        { "name": "DBMS", "icon": "SiMysql", "color": "#4479A1" }
+      ]
+    }
+  ]
+}

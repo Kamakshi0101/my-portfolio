@@ -1,0 +1,43 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "degree": "Bachelor of Technology – Computer Science and Engineering",
+      "institution": "Lovely Professional University",
+      "location": "Punjab, India",
+      "period": "Aug 2023 – Present",
+      "grade": "CGPA: 9.10",
+      "description": "Pursuing BTech in Computer Science with focus on software engineering, algorithms, distributed systems, and full-stack web development. Ranked among top 25 students for academic excellence.",
+      "logo": "/images/education/lpu-logo.png",
+      "icon": "university",
+      "color": "#6366F1",
+      "current": true
+    },
+    {
+      "id": 2,
+      "degree": "Intermediate (Class XII)",
+      "institution": "Delhi Public School, Vasant Kunj",
+      "location": "New Delhi, India",
+      "period": "Apr 2021 – Mar 2022",
+      "grade": "91.8%",
+      "description": "Completed intermediate education with a focus on Mathematics, Physics, and Computer Science. Awarded with gold medal for excellence in academics for 7 consecutive years(2014-21).",
+      "logo": "/images/education/dps-vasant-kunj-logo.jpg",
+      "icon": "school",
+      "color": "#10B981",
+      "current": false
+    },
+    {
+      "id": 3,
+      "degree": "Matriculation (Class X)",
+      "institution": "Delhi Public School, Vasant Kunj",
+      "location": "New Delhi, India",
+      "period": "Apr 2019 – Mar 2020",
+      "grade": "95.8%",
+      "description": "Completed matriculation with distinction. Ranked in TOP 10 STUDENTS in a batch of 500 students.",
+      "logo": "/images/education/dps-vasant-kunj-logo.jpg",
+      "icon": "school",
+      "color": "#F59E0B",
+      "current": false
+    }
+  ]
+}

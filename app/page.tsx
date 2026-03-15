@@ -1,65 +1,104 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import Navbar from "@/components/ui/Navbar";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import CodingDashboard from "@/components/sections/CodingDashboard";
+import Certificates from "@/components/sections/Certificates";
+import Achievements from "@/components/sections/Achievements";
+import Education from "@/components/sections/Education";
+import Contact from "@/components/sections/Contact";
+import Terminal from "@/components/terminal/Terminal";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/5 py-8 text-center">
+      <div className="max-w-7xl mx-auto px-4">
+        <p className="text-gray-600 text-sm font-mono">
+          <span className="gradient-text font-bold">Kamakshi Aggarwal</span>
+          {" · "}
+          Built with Next.js, Framer Motion & 💜
+          {" · "}
+          <span className="text-indigo-500">2026</span>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+function ParallaxOrbs() {
+  const { scrollY } = useScroll();
+  const y1Raw = useTransform(scrollY, [0, 3000], [0, -600]);
+  const y2Raw = useTransform(scrollY, [0, 3000], [0, -300]);
+  const y1 = useSpring(y1Raw, { stiffness: 30, damping: 20 });
+  const y2 = useSpring(y2Raw, { stiffness: 20, damping: 25 });
+
+  return (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Top-left orb — moves faster (parallax depth illusion) */}
+      <motion.div
+        style={{ y: y1 }}
+        className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full"
+        animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.14, 0.08] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="w-full h-full rounded-full bg-indigo-600 blur-[160px]" />
+      </motion.div>
+
+      {/* Bottom-right orb — moves slower */}
+      <motion.div
+        style={{ y: y2 }}
+        className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.07, 0.13, 0.07] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+      >
+        <div className="w-full h-full rounded-full bg-purple-600 blur-[140px]" />
+      </motion.div>
+
+      {/* Mid floating orb — cyan accent */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px]"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.03, 0.07, 0.03], x: [0, 40, 0], y: [0, -30, 0] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 8 }}
+      >
+        <div className="w-full h-full rounded-full bg-cyan-500 blur-[120px]" />
+      </motion.div>
+    </div>
+  );
+}
 
 export default function Home() {
+  const [terminalOpen, setTerminalOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative min-h-screen bg-dark-bg overflow-x-hidden">
+      {/* Scroll Progress Bar */}
+      <ScrollProgress />
+
+      {/* Parallax Background Orbs */}
+      <ParallaxOrbs />
+
+      <div className="relative z-10">
+        <Navbar onTerminalOpen={() => setTerminalOpen(true)} />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <CodingDashboard />
+        <Certificates />
+        <Achievements />
+        <Education />
+        <Contact />
+        <Footer />
+      </div>
+
+      {/* Interactive Terminal Mode */}
+      <Terminal isOpen={terminalOpen} onClose={() => setTerminalOpen(false)} />
+    </main>
   );
 }
