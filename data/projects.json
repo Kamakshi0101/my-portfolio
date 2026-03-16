@@ -10,7 +10,7 @@
       "device": "server",
       "github": "https://github.com/igmansvi/sadhn",
       "demo": "https://sadhn-in.vercel.app/",
-      "image": "/projects/sadhn.png",
+      "image": "/projects/sadhn.webp",
       "featured": true,
       "period": "Oct 2025 – Dec 2025"
     },
@@ -24,7 +24,7 @@
       "device": "laptop",
       "github": "https://github.com/Kamakshi0101/ai-interview-prep",
       "demo": "https://ai-interview-prep-two-kappa.vercel.app/",
-      "image": "/projects/interview-prep.png",
+      "image": "/projects/interview-prep.webp",
       "featured": true,
       "period": "Oct 2025 – Nov 2025"
     },
@@ -37,8 +37,8 @@
       "type": "web",
       "device": "laptop",
       "github": "https://github.com/Kamakshi0101/conflict-calendar",
-      "demo": "conflict-calendar.vercel.app",
-      "image": "/projects/calender.png",
+      "demo": "https://conflict-calendar.vercel.app",
+      "image": "/projects/calender.webp",
       "featured": false,
       "period": "Mar 2026"
     }

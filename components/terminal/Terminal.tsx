@@ -279,7 +279,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
@@ -339,7 +339,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
 
             {/* Input Line */}
             <div className="flex items-center gap-2 px-4 py-3 border-t border-white/5 bg-black/20">
-              <span className="text-indigo-400 font-mono text-sm flex-shrink-0">kamakshi</span>
+              <span className="text-indigo-400 font-mono text-sm shrink-0">kamakshi</span>
               <span className="text-gray-600 font-mono text-sm">@portfolio:~$</span>
               <input
                 ref={inputRef}

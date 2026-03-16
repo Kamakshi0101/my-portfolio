@@ -493,7 +493,7 @@ export default function CodingDashboard() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-green-400 text-sm font-mono tracking-widest uppercase">// Activity</span>
+          <span className="text-green-400 text-sm font-mono tracking-widest uppercase">{"// Activity"}</span>
           <h2 className="section-heading gradient-text mt-2">Coding Dashboard</h2>
           <p className="text-gray-400 max-w-2xl mx-auto mt-3 text-base">
             Live coding statistics and analytics across competitive programming and development platforms.
@@ -538,13 +538,12 @@ export default function CodingDashboard() {
 
               <div className="grid grid-cols-2 gap-3 mb-5">
                 {[
-                  { label: "Years of Experience", value: data.personalDevelopment.yearsExperience, suffix: " yrs", decimals: 1 },
-                  { label: "Total Projects", value: data.personalDevelopment.totalProjects },
-                  { label: "Completed Projects", value: data.personalDevelopment.completedProjects },
-                  { label: "In Progress", value: data.personalDevelopment.inProgressProjects },
-                  { label: "Certifications", value: data.personalDevelopment.totalCertifications },
-                  { label: "Total Skills", value: data.personalDevelopment.totalSkills },
-                  { label: "Avg Skills / Project", value: data.personalDevelopment.avgSkillsPerProject, decimals: 1 },
+                  { label: "Total Projects", value: data.personalDevelopment.totalProjects, suffix: "" },
+                  { label: "Completed Projects", value: data.personalDevelopment.completedProjects, suffix: "" },
+                  { label: "In Progress", value: data.personalDevelopment.inProgressProjects, suffix: "" },
+                  { label: "Certifications", value: data.personalDevelopment.totalCertifications, suffix: "" },
+                  { label: "Total Skills", value: data.personalDevelopment.totalSkills, suffix: "" },
+                  { label: "Avg Skills / Project", value: data.personalDevelopment.avgSkillsPerProject, decimals: 1, suffix: "" },
                 ].map((item) => (
                   <div key={item.label} className="rounded-lg border border-white/10 bg-white/5 p-3">
                     <div className="text-[11px] text-gray-500">{item.label}</div>

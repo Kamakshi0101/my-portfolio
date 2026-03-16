@@ -86,7 +86,7 @@ export default function Skills() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-purple-400 text-sm font-mono tracking-widest uppercase">// Tech Stack</span>
+          <span className="text-purple-400 text-sm font-mono tracking-widest uppercase">{"// Tech Stack"}</span>
           <h2 className="section-heading gradient-text mt-2">Skills &amp; Technologies</h2>
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">
             Tools and technologies I use to bring ideas to life.

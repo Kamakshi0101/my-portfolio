@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import projectsData from "@/data/projects.json";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import GlassCard from "@/components/ui/GlassCard";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 
 const techColors: Record<string, string> = {
@@ -22,6 +21,12 @@ interface Project {
   id: number; title: string; description: string; shortDescription: string;
   tech: string[]; type: string; device: string; github: string;
   demo: string; image: string; featured: boolean; period: string;
+}
+
+function preloadImage(src: string) {
+  if (typeof window === "undefined") return;
+  const img = new window.Image();
+  img.src = src;
 }
 
 function ProjectDeviceFallback({ device, className = "text-4xl" }: { device: string; className?: string }) {
@@ -41,7 +46,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
@@ -72,7 +77,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 alt={project.title}
                 fill
                 className="object-cover"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+                fetchPriority="high"
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -121,6 +128,9 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
       whileHover={{ y: -8, scale: 1.01 }}
       className="glass rounded-2xl overflow-hidden border border-white/5 hover:border-indigo-500/30 group cursor-pointer transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4),0_0_40px_rgba(99,102,241,0.15)]"
       onClick={onClick}
+      onMouseEnter={() => preloadImage(project.image)}
+      onFocus={() => preloadImage(project.image)}
+      onTouchStart={() => preloadImage(project.image)}
     >
       {/* Image */}
       <div className="relative h-44 bg-linear-to-br from-indigo-900/40 via-purple-900/40 to-cyan-900/40 overflow-hidden">
@@ -130,7 +140,8 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
             alt={project.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
-            unoptimized
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={index < 2}
             onError={() => setImageError(true)}
           />
         ) : (
@@ -196,6 +207,20 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const run = () => {
+      projectsData.projects.slice(0, 3).forEach((project) => preloadImage(project.image));
+    };
+
+    if (typeof requestIdleCallback === "function") {
+      const id = requestIdleCallback(run);
+      return () => cancelIdleCallback(id);
+    }
+
+    const t = setTimeout(run, 400);
+    return () => clearTimeout(t);
+  }, []);
+
   // Subtle background color shift as section scrolls into view
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -222,7 +247,7 @@ export default function Projects() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">// Work</span>
+          <span className="text-cyan-400 text-sm font-mono tracking-widest uppercase">{"// Work"}</span>
           <h2 className="section-heading gradient-text mt-2">Featured Projects</h2>
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">
             Production-ready applications showcasing full-stack engineering and AI integration.
@@ -234,7 +259,10 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               project={project as Project}
-              onClick={() => setSelectedProject(project as Project)}
+              onClick={() => {
+                preloadImage((project as Project).image);
+                setSelectedProject(project as Project);
+              }}
               index={i}
             />
           ))}

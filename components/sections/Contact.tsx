@@ -77,8 +77,8 @@ export default function Contact() {
     <SectionWrapper id="contact" className="bg-dark-surface/30 relative overflow-hidden" variant="cinematic">
       {/* Ambient finale glow — pulsing background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 rounded-full bg-indigo-600/10 blur-[120px] ambient-glow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 rounded-full bg-purple-600/10 blur-[100px] ambient-glow" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 rounded-full bg-indigo-600/10 blur-[72px] ambient-glow hidden md:block gpu-boost" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-75 rounded-full bg-purple-600/10 blur-[64px] ambient-glow hidden md:block gpu-boost" style={{ animationDelay: "3s" }} />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -90,7 +90,7 @@ export default function Contact() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-pink-400 text-sm font-mono tracking-widest uppercase">// Get In Touch</span>
+          <span className="text-pink-400 text-sm font-mono tracking-widest uppercase">{"// Get In Touch"}</span>
           <h2 className="section-heading gradient-text mt-2">Contact Me</h2>
           {/* Glowing CTA tagline */}
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">

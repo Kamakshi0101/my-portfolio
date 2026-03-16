@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import achievementsData from "@/data/achievements.json";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { IconCode, IconSchool, IconMedal, IconTrophy } from "@tabler/icons-react";
@@ -34,7 +35,7 @@ export default function Achievements() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-amber-400 text-sm font-mono tracking-widest uppercase">// MILESTONES</span>
+          <span className="text-amber-400 text-sm font-mono tracking-widest uppercase">{"// MILESTONES"}</span>
           <h2 className="section-heading gradient-text mt-2">Achievements</h2>
           <p className="text-gray-400 max-w-3xl mx-auto mt-3 text-base">
             Recognition, milestones, and accomplishments that define my journey in academics, competitive programming, and technical competitions.
@@ -125,24 +126,19 @@ export default function Achievements() {
                         <motion.div
                           whileHover={{ scale: 1.03 }}
                           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                          className="overflow-hidden rounded-[10px] border"
+                          className="overflow-hidden rounded-[10px] border relative w-full h-44"
                           style={{
                             borderColor: "rgba(255,255,255,0.08)",
                             boxShadow: "0 8px 25px rgba(0,0,0,0.35)",
                           }}
                         >
-                          <img
+                          <Image
                             src={item.image}
                             alt={`${item.title} visual proof`}
-                            loading="lazy"
+                            fill
+                            sizes="(max-width: 768px) 90vw, 288px"
                             onError={() => setImageErrorMap((prev) => ({ ...prev, [item.id]: true }))}
-                            style={{
-                              width: "100%",
-                              height: "auto",
-                              maxHeight: "200px",
-                              objectFit: "cover",
-                              display: "block",
-                            }}
+                            className="object-cover"
                           />
                         </motion.div>
                       ) : (

@@ -105,18 +105,18 @@ export default function Hero() {
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-600/20 blur-[120px] pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-600/20 blur-[72px] pointer-events-none hidden md:block gpu-boost"
       />
       <motion.div
         animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 10, repeat: Infinity, delay: 3 }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-600/20 blur-[100px] pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-600/20 blur-3xl pointer-events-none hidden md:block gpu-boost"
       />
 
       {/* Floating Tech Icons — parallax out when scrolling */}
       <motion.div
         style={{ opacity: iconsOpacity, y: iconsY }}
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none gpu-boost"
       >
         {floatingIcons.map((item, i) => (
           <motion.div
@@ -144,7 +144,7 @@ export default function Hero() {
       {/* Main Content — spring parallax upward as user scrolls */}
       <motion.div
         style={{ y, opacity, scale }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 pt-20 pb-10"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 pt-20 pb-10 gpu-boost"
       >
         {/* Text Content with staggered entrance */}
         <motion.div
@@ -272,8 +272,8 @@ export default function Hero() {
                 alt="Kamakshi Aggarwal"
                 fill
                 className="object-cover object-center"
-                unoptimized
                 priority
+                sizes="(max-width: 768px) 256px, (max-width: 1200px) 320px, 384px"
                 onError={() => setAvatarLoadError(true)}
               />
               {/* Gradient Fallback */}

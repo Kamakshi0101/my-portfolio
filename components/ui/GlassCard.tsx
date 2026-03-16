@@ -24,8 +24,8 @@ export default function GlassCard({
       transition={{ duration: 0.2, ease: "easeOut" }}
       onClick={onClick}
       className={`
-        relative glass rounded-2xl transition-all duration-300
-        ${hover ? "cursor-pointer hover:shadow-[0_16px_48px_rgba(0,0,0,0.4),0_0_30px_rgba(99,102,241,0.15)]" : ""}
+        relative glass rounded-2xl transition-all duration-300 gpu-boost
+        ${hover ? "cursor-pointer hover:shadow-[0_10px_28px_rgba(0,0,0,0.32),0_0_16px_rgba(99,102,241,0.12)]" : ""}
         ${gradient ? "gradient-border" : ""}
         ${className}
       `}

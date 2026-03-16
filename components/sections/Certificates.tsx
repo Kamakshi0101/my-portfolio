@@ -21,7 +21,7 @@ function CertModal({ cert, onClose }: { cert: Certificate; onClose: () => void }
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
@@ -58,7 +58,8 @@ function CertModal({ cert, onClose }: { cert: Certificate; onClose: () => void }
                 alt={cert.title}
                 fill
                 className="object-contain bg-black/10"
-                unoptimized
+                sizes="(max-width: 768px) 100vw, 560px"
+                loading="lazy"
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -103,7 +104,7 @@ export default function Certificates() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-amber-400 text-sm font-mono tracking-widest uppercase">// Credentials</span>
+          <span className="text-amber-400 text-sm font-mono tracking-widest uppercase">{"// Credentials"}</span>
           <h2 className="section-heading gradient-text mt-2">Certificates</h2>
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">
             Professional certifications validating skills and expertise.
@@ -141,7 +142,8 @@ export default function Certificates() {
                       alt={cert.title}
                       fill
                       className="object-cover"
-                      unoptimized
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      loading="lazy"
                       onError={() => setBrokenImages((prev) => ({ ...prev, [cert.id]: true }))}
                     />
                   ) : (

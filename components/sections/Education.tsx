@@ -27,7 +27,7 @@ export default function Education() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-mono tracking-widest uppercase">// Background</span>
+          <span className="text-blue-400 text-sm font-mono tracking-widest uppercase">{"// Background"}</span>
           <h2 className="section-heading gradient-text mt-2">Education</h2>
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">
             Academic journey shaping my knowledge and perspective.
@@ -96,7 +96,8 @@ export default function Education() {
                               width={26}
                               height={26}
                               className="object-contain"
-                              unoptimized
+                              loading="lazy"
+                              sizes="26px"
                               onError={() => setLogoErrorMap((prev) => ({ ...prev, [edu.id]: true }))}
                             />
                           ) : (

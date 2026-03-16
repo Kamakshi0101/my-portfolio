@@ -46,7 +46,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-indigo-400 text-sm font-mono tracking-widest uppercase"
           >
-            // About Me
+            {"// About Me"}
           </motion.span>
           <h2 className="section-heading gradient-text mt-2">Who I Am</h2>
           <p className="text-gray-400 max-w-xl mx-auto mt-3 text-base">
@@ -72,7 +72,8 @@ export default function About() {
                   alt="Kamakshi Aggarwal"
                   fill
                   className="object-cover object-center"
-                  unoptimized
+                  sizes="(max-width: 768px) 288px, 384px"
+                  loading="lazy"
                   onError={() => setAvatarLoadError(true)}
                 />
                 {avatarLoadError && (
@@ -110,9 +111,9 @@ export default function About() {
 
             <div className="space-y-4 text-gray-400 leading-7">
               {[
-                <>I&apos;m <strong className="text-white">Kamakshi Aggarwal</strong>, a BTech Computer Science student at Lovely Professional University with a CGPA of 9.10. I have a deep passion for software engineering — from crafting robust backend architectures to solving complex algorithmic challenges.</>,
-                <>My journey spans <span className="text-indigo-400">microservices development</span>, <span className="text-purple-400">competitive programming</span>, and <span className="text-cyan-400">AI-driven applications</span>. I thrive at the intersection of elegant code and practical solutions.</>,
-                <>When I&apos;m not coding, I&apos;m honing my problem-solving skills on LeetCode, GFG, and HackerRank — always pushing to the next level.</>,
+                <>I&apos;m <strong className="text-white">Kamakshi Aggarwal</strong>, a B.Tech Computer Science student at Lovely Professional University with a CGPA of 9.10 and a strong interest in backend systems, distributed architectures, and AI-driven applications.</>,
+                <>I focus on building scalable software solutions using technologies such as <span className="text-indigo-400">React</span>, <span className="text-purple-400">Node.js</span>, <span className="text-cyan-400">MongoDB</span>, Docker, and AWS. My projects include SADHN, a microservices-based skill development platform with role-based access and real-time WebSocket notifications, and an AI-powered interview preparation platform designed to generate personalized learning workflows.</>,
+                <>Alongside development, I actively practice DSA and have solved <strong className="text-white">300+ coding problems</strong>, strengthening my algorithmic thinking and problem-solving skills.</>,
               ].map((para, i) => (
                 <motion.p
                   key={i}
