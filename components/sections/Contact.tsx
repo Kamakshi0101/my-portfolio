@@ -239,7 +239,7 @@ export default function Contact() {
                           </svg>
                           Sending...
                         </span>
-                      ) : "Send Message 🚀"}
+                      ) : "Send Message"}
                     </AnimatedButton>
                   </motion.div>
 

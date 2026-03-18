@@ -89,7 +89,7 @@ export default function About() {
                 className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 border border-indigo-500/30"
               >
                 <div className="text-sm font-medium text-white">Software Engineer</div>
-                <div className="text-xs text-gray-400 mt-0.5">📍 Punjab, India</div>
+                <div className="text-xs text-gray-400 mt-0.5">📍 Gurgaon, India</div>
               </motion.div>
             </div>
           </motion.div>
@@ -113,7 +113,7 @@ export default function About() {
               {[
                 <>I&apos;m <strong className="text-white">Kamakshi Aggarwal</strong>, a B.Tech Computer Science student at Lovely Professional University with a CGPA of 9.10 and a strong interest in backend systems, distributed architectures, and AI-driven applications.</>,
                 <>I focus on building scalable software solutions using technologies such as <span className="text-indigo-400">React</span>, <span className="text-purple-400">Node.js</span>, <span className="text-cyan-400">MongoDB</span>, Docker, and AWS. My projects include SADHN, a microservices-based skill development platform with role-based access and real-time WebSocket notifications, and an AI-powered interview preparation platform designed to generate personalized learning workflows.</>,
-                <>Alongside development, I actively practice DSA and have solved <strong className="text-white">300+ coding problems</strong>, strengthening my algorithmic thinking and problem-solving skills.</>,
+                <>Alongside development, I actively practice DSA strengthening my algorithmic thinking and problem-solving skills.</>,
               ].map((para, i) => (
                 <motion.p
                   key={i}

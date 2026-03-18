@@ -2,10 +2,27 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import type { IconType } from "react-icons";
 import statsData from "@/data/codingStats.json";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import GlassCard from "@/components/ui/GlassCard";
-import { SiLeetcode, SiGithub, SiHackerrank, SiGeeksforgeeks } from "react-icons/si";
+import {
+  SiLeetcode,
+  SiGithub,
+  SiHackerrank,
+  SiGeeksforgeeks,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiDocker,
+  SiJsonwebtokens,
+  SiSocketdotio,
+} from "react-icons/si";
 
 type PlatformMetric = {
   label: string;
@@ -96,6 +113,24 @@ type ApiPayload = {
     gfg: string | null;
   };
 };
+
+const skillUsageIconMap: Record<string, { icon: IconType; color: string }> = {
+  "next.js": { icon: SiNextdotjs, color: "#FFFFFF" },
+  react: { icon: SiReact, color: "#61DAFB" },
+  tailwindcss: { icon: SiTailwindcss, color: "#06B6D4" },
+  typescript: { icon: SiTypescript, color: "#3178C6" },
+  "node.js": { icon: SiNodedotjs, color: "#339933" },
+  express: { icon: SiExpress, color: "#FFFFFF" },
+  mongodb: { icon: SiMongodb, color: "#47A248" },
+  postgresql: { icon: SiPostgresql, color: "#4169E1" },
+  docker: { icon: SiDocker, color: "#2496ED" },
+  jwt: { icon: SiJsonwebtokens, color: "#F97316" },
+  websockets: { icon: SiSocketdotio, color: "#FFFFFF" },
+};
+
+function getSkillUsageMeta(name: string) {
+  return skillUsageIconMap[name.toLowerCase()];
+}
 
 function useCountUp(target: number, duration = 1800, start = false, decimals = 0) {
   const [count, setCount] = useState(0);
@@ -570,7 +605,15 @@ export default function CodingDashboard() {
                             key={`${group.category}-${skill.name}`}
                             className="px-2 py-0.5 rounded-full text-xs border border-white/10 bg-white/5 text-gray-200"
                           >
-                            {skill.name} ({skill.count})
+                            <span className="flex items-center gap-1.5">
+                              {(() => {
+                                const meta = getSkillUsageMeta(skill.name);
+                                if (!meta) return null;
+                                const Icon = meta.icon;
+                                return <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: meta.color }} />;
+                              })()}
+                              <span>{skill.name} ({skill.count})</span>
+                            </span>
                           </span>
                         ))}
                       </div>

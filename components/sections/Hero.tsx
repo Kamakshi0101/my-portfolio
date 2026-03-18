@@ -1,39 +1,14 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import AnimatedButton from "@/components/ui/AnimatedButton";
-import Image from "next/image";
-import {
-  SiReact,
-  SiTypescript,
-  SiPython,
-  SiNodedotjs,
-  SiDocker,
-  SiCplusplus,
-  SiMongodb,
-} from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import Lanyard from "@/components/ui/profile-id-card";
 
 const typingPhrases = [
   "Backend Developer",
-  "Competitive Programmer",
   "Full Stack Engineer",
-  "AI Enthusiast",
   "Problem Solver",
-];
-
-const AVATAR_SRC = "/avatar.jpg";
-
-const floatingIcons = [
-  { icon: SiReact, label: "React", color: "#61DAFB", delay: 0, x: "15%", y: "20%" },
-  { icon: SiTypescript, label: "TypeScript", color: "#3178C6", delay: 1, x: "80%", y: "15%" },
-  { icon: SiPython, label: "Python", color: "#3776AB", delay: 2, x: "10%", y: "75%" },
-  { icon: SiNodedotjs, label: "Node.js", color: "#339933", delay: 0.5, x: "85%", y: "70%" },
-  { icon: SiDocker, label: "Docker", color: "#2496ED", delay: 1.5, x: "20%", y: "50%" },
-  { icon: SiCplusplus, label: "C++", color: "#00599C", delay: 2.5, x: "75%", y: "45%" },
-  { icon: FaAws, label: "AWS", color: "#FF9900", delay: 3, x: "50%", y: "10%" },
-  { icon: SiMongodb, label: "MongoDB", color: "#47A248", delay: 0.8, x: "90%", y: "35%" },
 ];
 
 const containerVariants = {
@@ -51,7 +26,6 @@ export default function Hero() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [avatarLoadError, setAvatarLoadError] = useState(false);
   const heroRef = useRef(null);
 
   const { scrollY } = useScroll();
@@ -64,14 +38,9 @@ export default function Hero() {
   const opacity = useSpring(rawOpacity, { stiffness: 60, damping: 20 });
   const scale   = useSpring(rawScale,   { stiffness: 60, damping: 20 });
 
-  // Icons fade out faster as user scrolls
-  const iconsOpacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const iconsY       = useTransform(scrollY, [0, 300], [0, -60]);
-
-  // Typing animation
   useEffect(() => {
-    const speed = isDeleting ? 40 : 80;
     const phrase = typingPhrases[phraseIndex];
+    const speed = isDeleting ? 45 : 80;
 
     const timeout = setTimeout(() => {
       if (!isDeleting && charIndex < phrase.length) {
@@ -81,7 +50,7 @@ export default function Hero() {
         setDisplayText(phrase.slice(0, charIndex - 1));
         setCharIndex((c) => c - 1);
       } else if (!isDeleting && charIndex === phrase.length) {
-        setTimeout(() => setIsDeleting(true), 1800);
+        setTimeout(() => setIsDeleting(true), 1200);
       } else if (isDeleting && charIndex === 0) {
         setIsDeleting(false);
         setPhraseIndex((i) => (i + 1) % typingPhrases.length);
@@ -100,46 +69,6 @@ export default function Hero() {
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(99,102,241,0.25),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(168,85,247,0.25),transparent_50%)]" />
-
-      {/* Glowing Orbs (hero-specific) */}
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-600/20 blur-[72px] pointer-events-none hidden md:block gpu-boost"
-      />
-      <motion.div
-        animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
-        transition={{ duration: 10, repeat: Infinity, delay: 3 }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-600/20 blur-3xl pointer-events-none hidden md:block gpu-boost"
-      />
-
-      {/* Floating Tech Icons — parallax out when scrolling */}
-      <motion.div
-        style={{ opacity: iconsOpacity, y: iconsY }}
-        className="absolute inset-0 pointer-events-none gpu-boost"
-      >
-        {floatingIcons.map((item, i) => (
-          <motion.div
-            key={item.label}
-            className="absolute hidden md:flex items-center gap-1 glass rounded-full px-3 py-1.5 text-sm select-none"
-            style={{ left: item.x, top: item.y }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: [0, -10 - i * 2, 0],
-            }}
-            transition={{
-              opacity: { delay: item.delay + 1, duration: 0.5 },
-              scale:   { delay: item.delay + 1, duration: 0.5 },
-              y: { delay: item.delay, duration: 3 + i * 0.3, repeat: Infinity, ease: "easeInOut" },
-            }}
-          >
-            <item.icon className="w-4 h-4" style={{ color: item.color }} />
-            <span className="text-xs text-gray-400">{item.label}</span>
-          </motion.div>
-        ))}
-      </motion.div>
 
       {/* Main Content — spring parallax upward as user scrolls */}
       <motion.div
@@ -171,11 +100,10 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-400 mb-2 h-8 font-medium"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className="text-lg md:text-xl text-indigo-300/90 mb-2 font-semibold tracking-wide h-8"
           >
-            <span className="gradient-text">{displayText}</span>
-            <span className="inline-block w-0.5 h-6 bg-indigo-400 ml-1 animate-blink" />
+            <span>{displayText}</span>
+            <span className="inline-block w-0.5 h-6 bg-indigo-300/90 ml-1 animate-pulse align-middle" />
           </motion.div>
 
           <motion.p
@@ -220,7 +148,7 @@ export default function Hero() {
               size="lg"
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Contact Me
+              Contact
             </AnimatedButton>
           </motion.div>
 
@@ -247,50 +175,16 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          className="shrink-0 relative"
+          className="shrink-0 relative w-full lg:w-auto"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-            {/* Outer Ring */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-500/30"
+          <div className="relative w-full h-100 sm:h-115 md:h-130 lg:w-125 lg:h-145">
+            <Lanyard
+              className="w-full h-full"
+              position={[0, 0, 16]}
+              gravity={[0, -40, 0]}
+              fov={13}
+              transparent
             />
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-4 rounded-full border border-dashed border-purple-500/20"
-            />
-
-            {/* Glow */}
-            <div className="absolute inset-8 rounded-full bg-linear-to-br from-indigo-600/40 via-purple-600/30 to-cyan-600/20 blur-2xl" />
-
-            {/* Photo */}
-            <div className="absolute inset-8 rounded-full overflow-hidden glass border-2 border-white/10 shadow-2xl shadow-indigo-500/20">
-              <Image
-                src={AVATAR_SRC}
-                alt="Kamakshi Aggarwal"
-                fill
-                className="object-cover object-center"
-                priority
-                sizes="(max-width: 768px) 256px, (max-width: 1200px) 320px, 384px"
-                onError={() => setAvatarLoadError(true)}
-              />
-              {/* Gradient Fallback */}
-              {avatarLoadError && (
-                <div className="absolute inset-0 bg-linear-to-br from-indigo-600 via-purple-600 to-cyan-600 flex items-center justify-center">
-                  <span className="text-white text-6xl font-bold font-heading opacity-50">KA</span>
-                </div>
-              )}
-            </div>
-
-            {/* Corner Badges */}
-            <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute top-4 -right-2 glass rounded-xl px-3 py-2 border border-green-500/30">
-              <div className="text-xs text-green-400 font-mono">CGPA 9.10</div>
-            </motion.div>
-            <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 4, repeat: Infinity, delay: 1 }} className="absolute bottom-4 -left-2 glass rounded-xl px-3 py-2 border border-purple-500/30">
-              <div className="text-xs text-purple-400 font-mono">BTech CSE</div>
-            </motion.div>
           </div>
         </motion.div>
       </motion.div>

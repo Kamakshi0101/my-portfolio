@@ -25,7 +25,7 @@ function Footer() {
         <p className="text-gray-600 text-sm font-mono">
           <span className="gradient-text font-bold">Kamakshi Aggarwal</span>
           {" · "}
-          Built with Next.js, Framer Motion & 💜
+          Built with 💜
           {" · "}
           <span className="text-indigo-500">2026</span>
         </p>

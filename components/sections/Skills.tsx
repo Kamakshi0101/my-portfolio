@@ -72,6 +72,33 @@ const skillsByCategory = [
   },
 ];
 
+const skillMetaMap: Record<string, { icon: React.ElementType; color: string }> = {
+  "c++": { icon: SiCplusplus, color: "#00599C" },
+  javascript: { icon: SiJavascript, color: "#F7DF1E" },
+  typescript: { icon: SiTypescript, color: "#3178C6" },
+  python: { icon: SiPython, color: "#3776AB" },
+  java: { icon: FaJava, color: "#ED8B00" },
+  "react.js": { icon: SiReact, color: "#61DAFB" },
+  "next.js": { icon: SiNextdotjs, color: "#FFFFFF" },
+  "node.js": { icon: SiNodedotjs, color: "#339933" },
+  "express.js": { icon: SiExpress, color: "#FFFFFF" },
+  "tailwind css": { icon: SiTailwindcss, color: "#06B6D4" },
+  mongodb: { icon: SiMongodb, color: "#47A248" },
+  postgresql: { icon: SiPostgresql, color: "#4169E1" },
+  mysql: { icon: SiMysql, color: "#4479A1" },
+  docker: { icon: SiDocker, color: "#2496ED" },
+  aws: { icon: FaAws, color: "#FF9900" },
+  git: { icon: SiGit, color: "#F05032" },
+  github: { icon: SiGithub, color: "#FFFFFF" },
+  vercel: { icon: SiVercel, color: "#FFFFFF" },
+  nginx: { icon: SiNginx, color: "#009639" },
+  linux: { icon: SiLinux, color: "#FCC624" },
+};
+
+function getSkillMeta(skill: string) {
+  return skillMetaMap[skill.toLowerCase()];
+}
+
 export default function Skills() {
   const [pausedOrbit, setPausedOrbit] = useState<string | null>(null);
 
@@ -203,11 +230,16 @@ export default function Skills() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 rounded-full text-xs text-gray-200 bg-white/5 border border-white/10"
-                    >
-                      {skill}
+                    <span key={skill} className="px-3 py-1.5 rounded-full text-xs text-gray-200 bg-white/5 border border-white/10">
+                      <span className="flex items-center gap-1.5">
+                        {(() => {
+                          const meta = getSkillMeta(skill);
+                          if (!meta) return null;
+                          const Icon = meta.icon;
+                          return <Icon className="w-4 h-4 shrink-0" style={{ color: meta.color }} />;
+                        })()}
+                        <span>{skill}</span>
+                      </span>
                     </span>
                   ))}
                 </div>
