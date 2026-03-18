@@ -13,6 +13,8 @@
     "@react-three/fiber": "^9.5.0",
     "@react-three/rapier": "^2.2.0",
     "@tabler/icons-react": "^3.40.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^12.35.2",
     "gl-matrix": "^3.4.4",
     "meshline": "^3.3.1",
