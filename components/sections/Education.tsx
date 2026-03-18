@@ -7,9 +7,9 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 import Image from "next/image";
 import { IconSchool, IconBuildingBank } from "@tabler/icons-react";
 
-const iconMap: Record<string, React.ElementType> = {
-  university: IconBuildingBank,
-  school: IconSchool,
+const iconMap: Record<string, (color: string) => React.ReactElement> = {
+  university: (color) => <IconBuildingBank className="w-5 h-5" style={{ color }} stroke={1.9} />,
+  school: (color) => <IconSchool className="w-5 h-5" style={{ color }} stroke={1.9} />,
 };
 
 export default function Education() {
@@ -48,7 +48,8 @@ export default function Education() {
           <div className="space-y-10">
             {educationData.education.map((edu, i) => {
               const isLeft = i % 2 === 0;
-              const FallbackIcon = iconMap[edu.icon] || IconSchool;
+              const renderFallbackIcon =
+                iconMap[edu.icon] || ((color: string) => <IconSchool className="w-5 h-5" style={{ color }} stroke={1.9} />);
               return (
                 <motion.div
                   key={edu.id}
@@ -101,7 +102,7 @@ export default function Education() {
                               onError={() => setLogoErrorMap((prev) => ({ ...prev, [edu.id]: true }))}
                             />
                           ) : (
-                            <FallbackIcon className="w-5 h-5" style={{ color: edu.color }} stroke={1.9} />
+                            renderFallbackIcon(edu.color)
                           )}
                         </motion.div>
                         <div className="flex-1 min-w-0">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import type { IconType } from "react-icons";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import GlassCard from "@/components/ui/GlassCard";
 import {
@@ -12,7 +13,7 @@ import {
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, IconType> = {
   SiReact, SiNextdotjs, SiNodedotjs, SiExpress, SiTailwindcss,
   SiMongodb, SiPostgresql, SiMysql, SiDocker, SiGit, SiGithub,
   SiVercel, SiNginx, SiPython, SiJavascript, SiTypescript, SiCplusplus,
@@ -72,7 +73,7 @@ const skillsByCategory = [
   },
 ];
 
-const skillMetaMap: Record<string, { icon: React.ElementType; color: string }> = {
+const skillMetaMap: Record<string, { icon: IconType; color: string }> = {
   "c++": { icon: SiCplusplus, color: "#00599C" },
   javascript: { icon: SiJavascript, color: "#F7DF1E" },
   typescript: { icon: SiTypescript, color: "#3178C6" },
